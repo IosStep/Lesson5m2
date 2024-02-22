@@ -3,6 +3,9 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    var timer:Timer?
+    var maxTime: Float = 30
+    
     lazy var nameLabel: UILabel = {
        let label = UILabel()
         label.text = "Math Buster"
@@ -15,6 +18,7 @@ class ViewController: UIViewController {
         let view = UISegmentedControl(items: ["Easy", "Medium", "Hard"])
         view.selectedSegmentIndex = 0
         view.selectedSegmentTintColor = .myGreen
+        view.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15)], for: .normal)
         return view
     }()
     
@@ -45,7 +49,7 @@ class ViewController: UIViewController {
     
     lazy var progressContainer: UIView = {
        let view = UIView()
-        view.backgroundColor = .myGreen.withAlphaComponent(0.6)
+        view.backgroundColor = .myGreen.withAlphaComponent(0.35)
         return view
     }()
     
@@ -59,13 +63,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .myBiege
+        startTime()
         setUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     
     func setUI() {
         view.addSubview(nameLabel)
         view.addSubview(segmentControl)
-        view.addSubview(progressView)
+        view.addSubview(progressContainer)
+        progressContainer.addSubview(progressView)
         // constraints
         nameLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
@@ -77,14 +89,36 @@ class ViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        progressView.snp.makeConstraints { make in
+        
+        progressContainer.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(12)
-            make.top.equalTo(segmentControl.snp.bottom).offset(4)
-            make.height.equalTo(20)
-            
+            make.height.equalTo(90)
+            make.top.equalTo(nameLabel.snp.bottom).offset(20)
         }
         
+        progressView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().offset(-12)
+            make.height.equalTo(5)
+            
+        }
 
+    }
+    
+    
+    func startTime() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(run), userInfo: nil, repeats: true)
+    }
+    
+    @objc func run() {
+        self.maxTime -= 1
+        print(self.maxTime)
+        
+        if self.maxTime == 1 {
+            timer?.invalidate()
+        }
+        self.progressView.setProgress(Float(self.maxTime/30), animated: true)
+        
     }
 
 
