@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0E9F5502B8CDB0A007AA08A /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E9F54F2B8CDB09007AA08A /* SecondScreen.swift */; };
+		B0E9F5522B8CDB3C007AA08A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E9F5512B8CDB3C007AA08A /* CustomButton.swift */; };
 		B0ED12F72B838A790099E432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED12F62B838A790099E432 /* AppDelegate.swift */; };
 		B0ED12FB2B838A790099E432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED12FA2B838A790099E432 /* ViewController.swift */; };
 		B0ED13002B838A7B0099E432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED12FF2B838A7B0099E432 /* Assets.xcassets */; };
 		B0ED13032B838A7B0099E432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED13012B838A7B0099E432 /* LaunchScreen.storyboard */; };
 		B0ED130C2B838CBB0099E432 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0ED130B2B838CBB0099E432 /* SnapKit */; };
-		B0ED130E2B838CBB0099E432 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B0ED130D2B838CBB0099E432 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0E9F54F2B8CDB09007AA08A /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
+		B0E9F5512B8CDB3C007AA08A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B0ED12F32B838A790099E432 /* Lesson4M2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson4M2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ED12F62B838A790099E432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0ED12FA2B838A790099E432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0ED130C2B838CBB0099E432 /* SnapKit in Frameworks */,
-				B0ED130E2B838CBB0099E432 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +60,8 @@
 			children = (
 				B0ED12F62B838A790099E432 /* AppDelegate.swift */,
 				B0ED12FA2B838A790099E432 /* ViewController.swift */,
+				B0E9F54F2B8CDB09007AA08A /* SecondScreen.swift */,
+				B0E9F5512B8CDB3C007AA08A /* CustomButton.swift */,
 				B0ED12FF2B838A7B0099E432 /* Assets.xcassets */,
 				B0ED13012B838A7B0099E432 /* LaunchScreen.storyboard */,
 				B0ED13042B838A7B0099E432 /* Info.plist */,
@@ -83,7 +87,6 @@
 			name = Lesson4M2;
 			packageProductDependencies = (
 				B0ED130B2B838CBB0099E432 /* SnapKit */,
-				B0ED130D2B838CBB0099E432 /* SnapKit-Dynamic */,
 			);
 			productName = Lesson4M2;
 			productReference = B0ED12F32B838A790099E432 /* Lesson4M2.app */;
@@ -144,6 +147,8 @@
 			files = (
 				B0ED12FB2B838A790099E432 /* ViewController.swift in Sources */,
 				B0ED12F72B838A790099E432 /* AppDelegate.swift in Sources */,
+				B0E9F5502B8CDB0A007AA08A /* SecondScreen.swift in Sources */,
+				B0E9F5522B8CDB3C007AA08A /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +380,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B0ED130A2B838CBB0099E432 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		B0ED130D2B838CBB0099E432 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B0ED130A2B838CBB0099E432 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
